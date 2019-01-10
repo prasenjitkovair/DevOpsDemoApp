@@ -7,12 +7,12 @@ pipeline
 		{
 			steps
 			{
-				git 'https://github.com/prasenjitkovair/JenkinsDemo.git'
+				git 'https://github.com/prasenjitkovair/DevOpsDemoApp.git'
 				
 				script {
                     def mvn_version = 'maven_3_5_4'
 					withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-					  sh "mvn -f KovairTraining/pom.xml compile"
+					  sh "mvn compile"
 					}
                 }
 				
@@ -22,7 +22,7 @@ pipeline
 			{ 
 				success { 
 					echo 'Archiving the Artifact..'
-					archiveArtifacts artifacts: 'KovairTraining/target/*.jar'
+					//archiveArtifacts artifacts: 'KovairTraining/target/*.jar'
 				}
 			}
 			
