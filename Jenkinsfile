@@ -16,6 +16,7 @@ pipeline
 					}
                 }
 				
+				echo currentBuild.number
 			}
 			
 			post
