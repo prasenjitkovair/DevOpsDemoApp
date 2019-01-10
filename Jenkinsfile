@@ -12,7 +12,7 @@ pipeline
 				script {
                     def mvn_version = 'maven_3_5_4'
 					withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-					  sh "mvn compile"
+					  sh "mvn clean install"
 					}
                 }
 				
