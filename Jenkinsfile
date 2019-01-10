@@ -16,7 +16,7 @@ pipeline
 					}
                 }
 				
-				echo currentBuild.number
+				sh "echo ${JOB_NAME}"
 			}
 			
 			post
