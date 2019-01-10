@@ -71,7 +71,7 @@
 					<version>2.4</version>
 					<configuration>
 						<warSourceDirectory>target</warSourceDirectory>
-						<warName>JavaSpringDemo</warName>
+						<warName>DevOpsDemoApplication</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
