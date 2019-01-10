@@ -14,9 +14,10 @@ pipeline
 					withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 					  sh "mvn clean install"
 					}
+					sh "echo ${JOB_NAME}"
                 }
 				
-				sh "${JOB_NAME}"
+				
 			}
 			
 			post
