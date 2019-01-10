@@ -16,7 +16,7 @@ pipeline
 					}
                 }
 				
-				sh "echo ${JOB_NAME}"
+				sh "${JOB_NAME}"
 			}
 			
 			post
