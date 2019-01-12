@@ -22,11 +22,16 @@ pipeline
 			
 			post
 			{ 
-				success { 
+				success {
+
+				
 					echo 'Archiving the Artifact..'
 					archiveArtifacts artifacts: 'target/*.war'
 					
 					
+					echo 'Copying the war file to Chef Deployment directory'
+					sh 'cp target/*.war /home/kovair/chef-repo/cookbooks/deploy_to_vm/files/default'
+
 				}
 			}
 			
