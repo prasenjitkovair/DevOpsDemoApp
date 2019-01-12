@@ -14,7 +14,7 @@ pipeline
 					withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 					  sh "mvn clean install"
 					}
-					sh "${JOB_NAME}"
+					//sh "${JOB_NAME}"
                 }
 				
 				
@@ -25,6 +25,8 @@ pipeline
 				success { 
 					echo 'Archiving the Artifact..'
 					archiveArtifacts artifacts: 'target/*.war'
+					
+					sh 
 				}
 			}
 			
