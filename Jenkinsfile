@@ -32,8 +32,8 @@ pipeline
 					archiveArtifacts artifacts: 'target/*.war'
 					
 					
-					echo '************Copying the war file to Chef Deployment directory************'
-					sh 'cp target/*.war /home/kovair/chef-repo/cookbooks/deploy_to_vm/files/default'
+					/*echo '************Copying the war file to Chef Deployment directory************'
+					sh 'cp target/*.war /home/kovair/chef-repo/cookbooks/deploy_to_vm/files/default'*/
 					
 					echo '************Uploading Cookbook and deploying war file to VM***************'
 					sh '''cd /home/kovair/chef-repo
