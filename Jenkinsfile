@@ -1,3 +1,5 @@
+
+def revertstagingserver = 'FALSE'
 pipeline
 {
 	agent none
@@ -39,8 +41,27 @@ pipeline
 							knife bootstrap 192.168.11.100 -x kovair -P kovair@123 --sudo --node-name nodeVMDeploy --run-list \'recipe[deploy_to_vm]\' -y'''
 
 				}
+				failure
+				{
+					script{
+						revertstagingserver = 'TRUE'
+					}
+				}
 			}
 			
+		}
+		
+		stage('temporary')
+		{
+			agent { label 'master' }
+			when {
+				expression {
+					return env.BRANCH_NAME != 'FALSE';
+					}
+			}
+			steps{
+				echo "Temporary step executed due build failure"
+			}
 		}
 		
 		stage('test')
