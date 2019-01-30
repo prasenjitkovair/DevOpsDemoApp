@@ -56,7 +56,7 @@ pipeline
 			agent { label 'master' }
 			when {
 				expression {
-					return env.BRANCH_NAME != 'FALSE';
+					return revertstagingserver != 'FALSE';
 					}
 			}
 			steps{
